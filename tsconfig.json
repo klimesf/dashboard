@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "jsx": "react",
+    "lib": ["es2015", "es2016", "es2017", "dom"],
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "paths": { "~/*": ["*"] },
+    "plugins": [{ "name": "typescript-tslint-plugin" }],
+    "strict": true
+  },
+  "include": ["src/**/*"]
+}
