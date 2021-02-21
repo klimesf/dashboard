@@ -1,0 +1,25 @@
+body,
+html {
+  background-color: #222;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  height: 800px;
+
+  &::before,
+  &::after {
+    content: "";
+    flex-basis: 100%;
+    width: 0;
+    order: 2;
+  }
+}

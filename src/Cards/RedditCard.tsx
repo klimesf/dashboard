@@ -19,7 +19,7 @@ export const RedditCard: React.FunctionComponent<{subreddit: string}> = ({subred
   }, []);
 
   return (
-    <div className='card f1'>
+    <div className='card reddit'>
       <h3>/r/{subreddit}</h3>
       <button onClick={() => { loadPosts(); }}>refresh</button>
       <hr/>
