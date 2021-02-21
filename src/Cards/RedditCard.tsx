@@ -1,38 +1,15 @@
 import * as React from 'react';
-import { api } from '~/Api';
-
-export interface RedditResponse {
-  readonly data: RedditData;
-}
-
-export interface RedditData {
-  readonly children: [RedditPost];
-}
-
-export interface RedditPost {
-  readonly data: RedditPostData;
-}
-
-export interface RedditPostData {
-  readonly name: string;
-  readonly permalink: string;
-  readonly title: string;
-}
-
-const readPosts = async (): Promise<[RedditPost]> => {
-  const response = await api<RedditResponse>('https://www.reddit.com/r/formula1/hot.json?limit=10');
-  return response.data.children;
-};
+import { readHotPosts, RedditPost } from '~/Api/Reddit';
 
 const getRedditLink = (post: RedditPost) => `https://reddit.com${post.data.permalink}`;
 
-export const RedditF1Card: React.FunctionComponent = () => {
+export const RedditCard: React.FunctionComponent<{subreddit: string}> = ({subreddit}) => {
   const [loading, setLoading] = React.useState(true);
   const [posts, setPosts] = React.useState<RedditPost[]>([]);
 
   const loadPosts = async () => {
     setLoading(true);
-    const freshPosts = await readPosts();
+    const freshPosts = await readHotPosts(subreddit, 10);
     setPosts(freshPosts);
     setLoading(false);
   };
@@ -43,7 +20,7 @@ export const RedditF1Card: React.FunctionComponent = () => {
 
   return (
     <div className='card f1'>
-      <h3>/r/formula1</h3>
+      <h3>/r/{subreddit}</h3>
       <button onClick={() => { loadPosts(); }}>refresh</button>
       <hr/>
       {loading
