@@ -1,5 +1,3 @@
-import { api } from '~/Api';
-
 export interface OpenWeatherResponse {
   readonly main: WeatherDataResponse;
   readonly sys: WeatherSysResponse;
@@ -29,10 +27,3 @@ export interface WeatherResponse {
   readonly id: number;
   readonly main: string;
 }
-
-export const readWeather = async (city: string, token: string): Promise<OpenWeatherResponse> => {
-  const response = await api<OpenWeatherResponse>(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${token}&units=metric`,
-  );
-  return response;
-};
