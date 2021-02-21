@@ -10,9 +10,10 @@ html {
 
 .container {
   display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
-  height: 100%;
+  flex-direction: column;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  height: 800px;
 
   &::before,
   &::after {
@@ -31,6 +32,11 @@ html {
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #393939;
+  }
 
   a {
     color: #ccc;
@@ -38,6 +44,10 @@ html {
 
     &:hover {
       text-decoration: underline;
+    }
+
+    &:visited {
+      color: #888;
     }
   }
 
@@ -57,7 +67,7 @@ html {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
       background-color: #666;
@@ -76,8 +86,8 @@ html {
 }
 
 .card.f1 {
-  order: 1;
-  height: 710px;
+  order: 2;
+  min-height: 700px;
 
   h3 {
     color: #ff5700;
@@ -87,7 +97,7 @@ html {
     list-style-type: square;
     color: #ccc;
     margin: 0;
-    padding: 10px 0 0 20px;
+    padding: 10px 0 10px 20px;
   }
 
   li {
