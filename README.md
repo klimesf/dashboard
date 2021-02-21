@@ -26,6 +26,10 @@ cd client && yarn install && OPEN_WEATHER_TOKEN=<your-token> yarn start --port 9
 
 The client is running on `http://dshbrd:9999`.
 
+You should see something like this:
+
+![Preview](.docs/dshbrd.png)
+
 ## Resources
 
 - [Toggl API](https://github.com/toggl/toggl_api_docs)
