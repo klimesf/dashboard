@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "es6",
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "paths": { "~/*": ["*"] },
+    "plugins": [{ "name": "typescript-tslint-plugin" }],
+    "strict": true,
+    "outDir": "./dist",
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*"]
+}

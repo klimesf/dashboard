@@ -4,14 +4,14 @@ import { getMonday } from '~/Utils/time';
 
 const secondsToHours = (seconds: number): number => Math.round(seconds / 3600);
 
-export const TogglCard: React.FunctionComponent<{token: string}> = ({token}) => {
+export const TogglCard: React.FunctionComponent = () => {
   const [thisMonth, setThisMonth] = React.useState(0);
   const [thisWeek, setThisWeek] = React.useState(0);
 
   const loadReport = async () => {
-    const thisMonthResponse = await readMonthlyReport(token);
+    const thisMonthResponse = await readMonthlyReport();
     setThisMonth(thisMonthResponse.summary_results.totals.seconds);
-    const thisWeekResponse = await readMonthlyReport(token, getMonday());
+    const thisWeekResponse = await readMonthlyReport(getMonday());
     setThisWeek(thisWeekResponse.summary_results.totals.seconds);
   };
 
