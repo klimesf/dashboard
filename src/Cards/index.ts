@@ -1,2 +1,2 @@
-export * from '~/Cards/RedditCard';
-export * from '~/Cards/WeatherCard';
+export * from '~/Cards/Reddit';
+export * from '~/Cards/Weather';
