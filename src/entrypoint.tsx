@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { render } from 'react-dom';
-import { PragueWeatherCard, RedditF1Card } from '~/Cards';
+import { RedditF1Card, WeatherCard } from '~/Cards';
 
 const App: React.FunctionComponent = () => (
   <div className='container'>
-    <PragueWeatherCard token={process.env.OPEN_WEATHER_TOKEN ?? ''}/>
+    <WeatherCard city='Prague' token={process.env.OPEN_WEATHER_TOKEN ?? ''}/>
+    <WeatherCard city='České Budějovice' token={process.env.OPEN_WEATHER_TOKEN ?? ''}/>
     <RedditF1Card/>
   </div>
 );
